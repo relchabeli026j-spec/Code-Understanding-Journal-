@@ -1,0 +1,13 @@
+[Task List]
+     ↓
+[Calculate Base Score (Priority)]
+     ↓
+[Adjust Score]
+ (Due Date + Status + Tags + Activity)
+     ↓
+[Final Score per Task]
+     ↓
+[Sort (Highest → Lowest)]
+     ↓
+[Top Priority Tasks]
+This algorithm demonstrates how multiple weighted conditions can simulate real-world prioritization. It balances urgency, importance, and task state to produce a meaningful ranking.

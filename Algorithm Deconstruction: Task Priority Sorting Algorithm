@@ -1,0 +1,106 @@
+Algorithm Deconstruction: Task Priority Sorting Algorithm
+1. Overview
+
+This algorithm is designed to rank and sort tasks based on their importance using a weighted scoring system. It evaluates multiple factors such as priority level, due date proximity,completion status, tags, and recent updates.
+2. Purpose
+
+The purpose of this algorithm is to ensure that the most important and urgent tasks are handled first by assigning each task a calculated score and sorting them accordingly.
+3. Input and Output
+
+Input:
+
+A list of task objects containing:
+priority
+due date
+status
+tags
+last updated time
+Output:
+
+A sorted list of tasks from highest importance to lowest
+4. Step-by-Step Breakdown
+Step 1: Assign Base Priority Score
+
+Each task is given a base score depending on its priority:
+
+Low → 1
+Medium → 2
+High → 4
+Urgent → 6
+
+This value is multiplied by 10 to give stronger weight to priority.
+Step 2: Adjust Score Based on Due Date
+
+Tasks closer to their due date receive higher scores:
+
+Overdue → +35
+Due today → +20
+Due within 2 days → +15
+Due within a week → +10
+
+This ensures urgent deadlines are prioritized.
+Step 3: Adjust Based on Task Status
+
+Completed or near-complete tasks are deprioritized:
+
+Done → −50
+Review → −15
+Step 4: Boost Based on Tags
+
+Tasks with critical tags such as:
+
+“blocker”, “critical”, “urgent”
+
+receive an additional score boost (+8).
+Step 5: Boost Recently Updated Tasks
+
+If a task was updated recently (within 1 day), it gets:
+
++5 points
+
+This highlights active or recently modified tasks.
+Step 6: Calculate Final Score
+
+All adjustments are combined into a final score for each task.
+Step 7: Sort Tasks
+
+Tasks are sorted in descending order based on their scores:
+
+Highest score → most important
+Step 8: Select Top Tasks
+
+The system can return only the top N tasks (e.g. top 5) for focus.
+[Task List]
+   ↓
+[Calculate Score]
+   ↓
+[Apply Adjustments]
+ (Priority + Date + Status + Tags)
+   ↓
+[Sort by Score]
+   ↓
+[Top Priority Tasks]
+5. Key Concepts Used
+Dictionaries (for priority weights)
+Conditional logic (if statements)
+Loops and list comprehensions
+Sorting algorithms
+Object-based data structures
+6. AI Explanation Insights
+
+Using AI to analyze this algorithm helped break down a complex scoring system into smaller understandable steps. It made it easier to see how multiple conditions combine to influence task importance.
+7. Observations
+The algorithm uses a weighted scoring system, which is flexible and scalable
+Multiple factors are combined to simulate real-world decision making
+It prioritizes urgency, importance, and activity
+8. Improvements
+Add user-defined weights for customization
+Include time estimates for tasks
+Use machine learning for smarter prioritization
+9. What I Learned
+How scoring systems are used in real applications
+How multiple conditions affect decision-making
+How sorting algorithms work with calculated values
+10. Reflection
+
+At first, the algorithm seemed complex due to the number of conditions involved. However, breaking it into smaller steps made it easier to understand how each factor contributes to the final task priority. This exercise improved my ability to analyze and explain real-world algorithms.

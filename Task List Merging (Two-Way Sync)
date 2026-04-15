@@ -1,0 +1,54 @@
+[Local Tasks]        [Remote Tasks]
+       ↓                    ↓
+     Combine Task IDs (Union)
+              ↓
+      Compare Each Task
+              ↓
+   ┌───────────────┬───────────────┬───────────────┐
+   │ Only Local    │ Only Remote   │ Both Exist    │
+   │ → Send Remote │ → Send Local  │ → Resolve     │
+   └───────────────┴───────────────┴───────────────┘
+              ↓
+      Conflict Resolution
+ (Latest Update + Status + Tags)
+              ↓
+        Merged Tasks
+              ↓
+     Sync Updates (Both Sides)
+
+def merge_tasks(local, remote):
+    merged = {}
+
+    all_ids = set(local.keys()) | set(remote.keys())
+
+    for task_id in all_ids:
+        if task_id in local and task_id not in remote:
+            merged[task_id] = local[task_id]
+
+        elif task_id in remote and task_id not in local:
+            merged[task_id] = remote[task_id]
+
+        else:
+            # Conflict → latest wins
+            if local[task_id]["updated"] > remote[task_id]["updated"]:
+                merged[task_id] = local[task_id]
+            else:
+                merged[task_id] = remote[task_id]
+
+    return merged
+
+
+local_tasks = {
+    1: {"name": "Task A", "updated": 5},
+    2: {"name": "Task B", "updated": 3}
+}
+
+remote_tasks = {
+    2: {"name": "Task B updated", "updated": 6},
+    3: {"name": "Task C", "updated": 2}
+}
+
+print(merge_tasks(local_tasks, remote_tasks))
+This algorithm reflects real-world synchronization systems, where data consistency must be maintained across multiple sources. Conflict resolution strategies such as “latest update wins” are essential in distributed systems.
+These algorithms demonstrate how real-world applications handle prioritization, natural input processing, and distributed data synchronization. Understanding them improved my ability to analyze complex systems and think like a software engineer.
+I found Algorithm 3 more challenging because of conflict resolution logic…

@@ -1,0 +1,59 @@
+Algorithm Deconstruction: Task Priority Sorting and Filtering
+1. Overview
+
+The algorithm is designed to organize tasks based on their priority and allow filtering based on user needs. It improves task management by ensuring important tasks are handled first.
+
+2. Purpose
+
+The purpose of this algorithm is to:
+
+Sort tasks according to priority (High, Medium, Low)
+Filter tasks based on selected criteria
+
+3. Input and Output
+
+Input:
+
+A list of tasks with priority levels
+
+Output:
+
+A sorted and/or filtered list of tasks
+4. Step-by-Step Breakdown
+
+Step 1: Store Tasks
+Tasks are stored in a list or array structure.
+
+Step 2: Sorting
+The algorithm compares task priorities and arranges them in order:
+High priority tasks appear first
+Medium next
+Low last
+
+Step 3: Filtering
+The algorithm loops through tasks and selects only those matching a condition (e.g. only “High” priority tasks).
+Step 4: Display Results
+The sorted/filtered tasks are displayed to the user.
+5. Key Concepts Used
+Lists/Arrays
+Loops (iteration)
+Conditional statements (if statements)
+Sorting logic
+6. AI Explanation Insights
+
+Using AI to analyze the algorithm helped simplify complex logic into smaller steps. The breakdown made it easier to understand how sorting and filtering work together.
+7. Observations
+Sorting improves efficiency by prioritizing tasks
+Filtering helps focus on specific tasks
+The algorithm is simple but powerful
+8. Improvements
+Add due dates to tasks
+Allow multiple filters (priority + date)
+Use advanced sorting algorithms for performance
+9. What I Learned
+How algorithms organize data
+The importance of sorting and filtering
+How to break down complex logic into smaller parts
+10. Reflection
+
+At first, the algorithm seemed complex, but breaking it into steps made it easier to understand. This process improved my ability to analyze and explain code logically.
